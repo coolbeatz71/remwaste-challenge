@@ -1,6 +1,6 @@
 import axios, {} from "axios";
-import type { ApiErrorDto, SkipsResponseDto } from "./api";
-import { api } from "./axios";
+import type { ApiErrorDto, SkipsResponseDto } from "./Api";
+import { api } from "./Axios";
 
 export class SkipService {
     /**

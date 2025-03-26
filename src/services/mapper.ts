@@ -1,4 +1,4 @@
-import type { SkipDto, SkipModel } from "./api";
+import type { SkipDto, SkipModel } from "./Api";
 
 export class SkipMapper {
     /**
