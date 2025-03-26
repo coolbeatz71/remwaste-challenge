@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa";
 import { type VariantProps, tv } from "tailwind-variants";
 
-const iconCheckVariants = tv({
+const iconVariants = tv({
     base: "w-5 h-5 text-gray-500",
     variants: {
         size: {
@@ -22,10 +22,10 @@ const iconCheckVariants = tv({
     }
 });
 
-type IconCheckProps = VariantProps<typeof iconCheckVariants> & {
+type IconCheckProps = VariantProps<typeof iconVariants> & {
     className?: string;
 };
 
 export const IconCheck = ({ size, color, className }: IconCheckProps) => (
-    <FaCheck className={iconCheckVariants({ size, color, className })} />
+    <FaCheck className={iconVariants({ size, color, className })} />
 );
