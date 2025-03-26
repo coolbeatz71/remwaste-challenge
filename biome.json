@@ -19,6 +19,9 @@
             "style": {
                 "useNodejsImportProtocol": "off"
             },
+            "complexity": {
+                "noStaticOnlyClass": "off"
+            },
             "correctness": {
                 "noUnusedVariables": "error",
                 "noUnusedImports": "error",
