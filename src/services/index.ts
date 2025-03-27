@@ -1,5 +1,5 @@
-import axios, {} from "axios";
-import type { ApiErrorDto, SkipsResponseDto } from "./Api";
+import axios, { type AxiosResponse } from "axios";
+import type { ApiErrorDto, SkipDto, SkipsResponseDto } from "./Api";
 import { api } from "./Axios";
 
 export class SkipService {
@@ -16,45 +16,30 @@ export class SkipService {
         area: string
     ): Promise<SkipsResponseDto> {
         try {
-            const response = await api.get<SkipsResponseDto>(
+            const response = await api.get<AxiosResponse>(
                 "/skips/by-location",
-                {
-                    params: { postcode, area }
-                }
+                { params: { postcode, area } }
             );
-
-            // handle success case with proper type checking
-            if (!response.data.success && !response.data.message) {
-                return {
-                    ...response.data,
-                    message: "No skips found for this location"
-                };
-            }
-
-            return response.data;
+            return {
+                skips: response.data as unknown as SkipDto[],
+                location: {
+                    postcode,
+                    area
+                }
+            };
         } catch (error) {
-            if (
-                axios.isAxiosError<{
-                    message?: string;
-                    errors?: Record<string, string[]>;
-                }>(error)
-            ) {
-                const apiError: ApiErrorDto = {
+            if (axios.isAxiosError(error)) {
+                throw {
                     message:
-                        error.response?.data?.message ||
+                        error?.message ||
                         "Failed to fetch skips. Please try again later.",
-                    status: error.response?.status || 500,
-                    errors: error.response?.data?.errors
-                };
-                throw apiError;
+                    status: error.status || 500
+                } as ApiErrorDto;
             }
-
-            // handle non-Axios errors
-            const apiError: ApiErrorDto = {
+            throw {
                 message: "An unexpected error occurred",
                 status: 500
-            };
-            throw apiError;
+            } as ApiErrorDto;
         }
     }
 }
