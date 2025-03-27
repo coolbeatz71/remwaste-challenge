@@ -10,7 +10,7 @@ import { IconAlert, IconCheck, IconChevronRight } from "@/config/Icons";
 import { cn } from "@/lib/Utils";
 import type { SkipModel } from "@/services/Api";
 import { Fragment } from "react";
-import { Button } from "./Button";
+import { Button } from "../shared/Button";
 
 export interface SkipCardProps {
     skip: SkipModel;
