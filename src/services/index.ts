@@ -20,6 +20,7 @@ export class SkipService {
                 "/skips/by-location",
                 { params: { postcode, area } }
             );
+
             return {
                 skips: response.data as unknown as SkipDto[],
                 location: {
