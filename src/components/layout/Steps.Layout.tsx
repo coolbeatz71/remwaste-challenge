@@ -8,11 +8,7 @@ export interface StepsLayoutProps {
 
 export const StepsLayout = ({ steps }: StepsLayoutProps) => {
     return (
-        <div
-            className={cn(
-                "min-h-full bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-            )}
-        >
+        <div className={cn("min-h-full text-gray-900 dark:text-gray-100")}>
             <div className="container mx-auto px-4 py-6">
                 <div className="relative">
                     <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 dark:bg-gray-700">

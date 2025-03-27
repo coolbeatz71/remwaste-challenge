@@ -2,9 +2,13 @@ import {
     FaArrowLeft,
     FaArrowRight,
     FaCheck,
+    FaCheckCircle,
     FaChevronRight
 } from "react-icons/fa";
 import { FiAlertTriangle } from "react-icons/fi";
+import { PiRoadHorizonBold } from "react-icons/pi";
+import { RxLapTimer } from "react-icons/rx";
+import { TbCancel } from "react-icons/tb";
 import { type VariantProps, tv } from "tailwind-variants";
 
 const iconVariants = tv({
@@ -37,6 +41,10 @@ export const IconCheck = ({ size, color, className }: IconCheckProps) => (
     <FaCheck className={iconVariants({ size, color, className })} />
 );
 
+export const IconCheckCircle = ({ size, color, className }: IconCheckProps) => (
+    <FaCheckCircle className={iconVariants({ size, color, className })} />
+);
+
 export const IconChevronRight = ({
     size,
     color,
@@ -55,4 +63,16 @@ export const IconArrowRight = ({ size, color, className }: IconCheckProps) => (
 
 export const IconArrowLeft = ({ size, color, className }: IconCheckProps) => (
     <FaArrowLeft className={iconVariants({ size, color, className })} />
+);
+
+export const IconTimer = ({ size, color, className }: IconCheckProps) => (
+    <RxLapTimer className={iconVariants({ size, color, className })} />
+);
+
+export const IconRoad = ({ size, color, className }: IconCheckProps) => (
+    <PiRoadHorizonBold className={iconVariants({ size, color, className })} />
+);
+
+export const IconCancel = ({ size, color, className }: IconCheckProps) => (
+    <TbCancel className={iconVariants({ size, color, className })} />
 );
