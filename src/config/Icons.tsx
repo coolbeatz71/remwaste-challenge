@@ -1,4 +1,9 @@
-import { FaCheck, FaChevronRight } from "react-icons/fa";
+import {
+    FaArrowLeft,
+    FaArrowRight,
+    FaCheck,
+    FaChevronRight
+} from "react-icons/fa";
 import { FiAlertTriangle } from "react-icons/fi";
 import { type VariantProps, tv } from "tailwind-variants";
 
@@ -42,4 +47,12 @@ export const IconChevronRight = ({
 
 export const IconAlert = ({ size, color, className }: IconCheckProps) => (
     <FiAlertTriangle className={iconVariants({ size, color, className })} />
+);
+
+export const IconArrowRight = ({ size, color, className }: IconCheckProps) => (
+    <FaArrowRight className={iconVariants({ size, color, className })} />
+);
+
+export const IconArrowLeft = ({ size, color, className }: IconCheckProps) => (
+    <FaArrowLeft className={iconVariants({ size, color, className })} />
 );
