@@ -1,0 +1,1 @@
+enforce-branch-name '^(feat|chore|bug)-[a-z]+(-[a-z]+)*$'
