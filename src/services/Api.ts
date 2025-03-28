@@ -25,8 +25,6 @@ export interface SkipsResponseDto {
         postcode: string;
         area: string;
     };
-    success: boolean;
-    message?: string;
 }
 
 // Error DTO
