@@ -9,12 +9,14 @@ export default function Home() {
         <div>
             <StepsLayout steps={steps} />
 
-            <SkipGrid
-                loading={isLoading}
-                skips={skips}
-                selectedSkip={skips[0]}
-                setSelectedSkip={() => console.log("nothing")}
-            />
+            <div className="container mx-auto px-4 py-6">
+                <SkipGrid
+                    loading={isLoading}
+                    skips={skips}
+                    selectedSkip={skips[0]}
+                    setSelectedSkip={() => console.log("nothing")}
+                />
+            </div>
         </div>
     );
 }

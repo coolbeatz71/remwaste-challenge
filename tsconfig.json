@@ -1,11 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "lib": [
-            "dom",
-            "dom.iterable",
-            "ESNext"
-        ],
+        "lib": ["dom", "dom.iterable", "ESNext"],
         "downlevelIteration": true,
         "allowJs": true,
         "skipLibCheck": true,
@@ -26,17 +22,14 @@
             }
         ],
         "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        }
+            "@/*": ["./src/*"]
+        },
+        "types": [
+            "vitest/globals",
+            "vite-plugin-arraybuffer/types",
+            "vitest/jsdom"
+        ]
     },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules"]
 }

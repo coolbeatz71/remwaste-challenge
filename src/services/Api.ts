@@ -31,7 +31,6 @@ export interface SkipsResponseDto {
 export interface ApiErrorDto {
     message: string;
     status: number;
-    errors?: Record<string, string[]>;
 }
 
 export interface SkipModel {

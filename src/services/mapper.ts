@@ -14,7 +14,7 @@ export class SkipMapper {
             rawPrice: skipDto.price_before_vat,
             period: skipDto.hire_period_days,
             privateOnly: !skipDto.allowed_on_road,
-            image: "/placeholder.svg?height=200&width=400",
+            image: "/skip.png",
             hirePeriodDays: skipDto.hire_period_days,
             transportCost: skipDto.transport_cost,
             perTonneCost: skipDto.per_tonne_cost,
