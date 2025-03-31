@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { ThemeProvider } from "next-themes";
-import { type Mock, vi } from "vitest";
+import type { Mock } from "vitest";
 import { ThemeToggle } from "./ThemeToggle";
 
 vi.mock("next-themes", async () => {
