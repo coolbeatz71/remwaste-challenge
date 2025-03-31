@@ -147,7 +147,7 @@ export const ThemeToggle = () => {
                     d={sunPath}
                     fill="transparent"
                     transition={{ duration: 0.65, type: "spring" }}
-                    initial={{ fillOpacity: 0, strokeOpacity: 0 }}
+                    initial={{ fillOpacity: 0, strokeOpacity: 0, x: 0, y: 0 }}
                     animate={theme === "dark" ? moonAnimation : sunAnimation}
                 />
             </motion.svg>
