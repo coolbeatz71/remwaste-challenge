@@ -1,9 +1,11 @@
-import type { SkipModel } from "@/services/Api";
+import type { ApiErrorDto, SkipModel } from "@/services/Api";
+import { ErrorDisplay } from "../shared/ErrorDisplay";
 import { SkipCard } from "../skip-card/SkipCard";
 import { SkipCardLoading } from "../skip-card/SkipCard.Loading";
 
 type SkipGridProps = {
     skips: SkipModel[];
+    error?: ApiErrorDto | null;
     loading: boolean;
     selectedSkip: SkipModel | null;
     setSelectedSkip: (skip: SkipModel) => void;
@@ -22,12 +24,19 @@ const SkipGridHeader = () => (
 
 export default function SkipGrid({
     skips,
+    error,
     loading,
     selectedSkip,
     setSelectedSkip
 }: SkipGridProps) {
     const gridClasses =
         "grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+
+    if (error) {
+        return (
+            <ErrorDisplay message="An error occurred while fetching skips" />
+        );
+    }
 
     return (
         <div className="flex flex-col">
