@@ -4,9 +4,9 @@ import { SkipCard } from "../skip-card/SkipCard";
 import { SkipCardLoading } from "../skip-card/SkipCard.Loading";
 
 type SkipGridProps = {
+    loading: boolean;
     skips: SkipModel[];
     error?: ApiErrorDto | null;
-    loading: boolean;
     selectedSkip: SkipModel | null;
     setSelectedSkip: (skip: SkipModel) => void;
 };

@@ -18,6 +18,9 @@ export const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
 
     return (
         <div
+            onClick={onSelect}
+            onKeyDown={onSelect}
+            data-testid="skip-card"
             className={`relative backdrop-blur-sm  ${cardBgColor} p-3 sm:p-3.5 md:p-4
                 rounded-lg overflow-hidden flex flex-col dark:hover:bg-slate-900 hover:bg-slate-200 
                 border  cursor-pointer hover:shadow-lg transition-all duration-300`}
@@ -66,7 +69,7 @@ export const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
             </div>
 
             <br />
-            <SkipCardButton isSelected={isSelected} onSelect={onSelect} />
+            <SkipCardButton isSelected={isSelected} />
         </div>
     );
 };

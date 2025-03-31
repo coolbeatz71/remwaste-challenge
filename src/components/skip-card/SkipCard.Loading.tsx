@@ -5,6 +5,7 @@ export interface SkipCardLoadingProps {
 export const SkipCardLoading = ({ className }: SkipCardLoadingProps) => {
     return (
         <div
+            data-testid="skip-card-loading"
             className={`p-4 relative overflow-hidden rounded-lg bg-white 
                 dark:bg-gray-800 shadow animate-pulse ${className || ""}`}
         >

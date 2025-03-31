@@ -10,6 +10,7 @@ export interface BottomDrawerProps {
 export const BottomDrawer = ({ selectedSkip }: BottomDrawerProps) => {
     return (
         <div
+            data-testid="bottom-drawer"
             className={cn(
                 `fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t
                 border-gray-200 dark:border-gray-700 shadow-lg 
@@ -38,22 +39,18 @@ const SelectedSkipInfo = ({ skip }: SelectedSkipInfoProps) => {
     return (
         <div
             className={`flex items-center bg-blue-50 dark:bg-blue-900/30 
-            p-3 rounded-lg w-full sm:w-auto transition-all duration-300 
+            p-2 rounded-lg w-full sm:w-auto transition-all duration-300 
             hover:bg-blue-100 dark:hover:bg-blue-900/40`}
         >
-            <div
-                className={`w-10 h-10 bg-blue-100 dark:bg-blue-800 rounded-full 
-                flex items-center justify-center text-blue-700 dark:text-blue-300 
-                font-bold mr-3 transition-transform duration-300 hover:scale-110 hover:rotate-12`}
-            >
-                {skip.id}
-            </div>
-            <div>
-                <p className="font-medium dark:text-white">
-                    {skip.size} Skip Selected
+            <div className="p-1">
+                <p className="dark:text-white">
+                    <span className="font-bold">{skip.size} Yards</span> Skip
+                    Selected
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-300">
-                    {skip.price} per week
+
+                <p className="text-lg font-bold text-cyan-400 flex items-center">
+                    £{(skip.price * (1 + skip.vat / 100)).toFixed(2)}
+                    <span className="text-sm font-light ml-1"> per week</span>
                 </p>
             </div>
         </div>

@@ -4,14 +4,11 @@ import { Fragment } from "react";
 
 interface SkipCardButtonProps {
     isSelected: boolean;
-    onSelect: () => void;
 }
 
-export const SkipCardButton = ({
-    isSelected,
-    onSelect
-}: SkipCardButtonProps) => {
+export const SkipCardButton = ({ isSelected }: SkipCardButtonProps) => {
     const baseClasses = `
+        cursor-pointer
         flex justify-center items-center py-2.5 text-sm font-medium 
         rounded-lg focus:outline-none focus:ring-4 transition-colors`;
 
@@ -29,7 +26,7 @@ export const SkipCardButton = ({
     );
 
     return (
-        <button type="button" onClick={onSelect} className={buttonClasses}>
+        <button type="button" className={buttonClasses}>
             {isSelected ? (
                 <Fragment>
                     <IconCheck size="sm" className="mr-2" />
