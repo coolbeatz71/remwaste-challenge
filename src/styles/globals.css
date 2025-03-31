@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Comfortaa";
+    src: url("/fonts/Comfortaa-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("/fonts/Comfortaa-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("/fonts/Comfortaa-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
 @layer base {
     :root {
         --background: 0% 100%;
@@ -53,6 +71,7 @@
     }
 
     body {
+        font-family: "Comfortaa", sans-serif;
         background-color: hsl(var(--background));
         color: hsl(var(--foreground));
     }

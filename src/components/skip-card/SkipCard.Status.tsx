@@ -12,9 +12,7 @@ export const SkipCardStatus = ({ status, type }: SkipCardStatusProps) => {
     return (
         <div className="flex items-center gap-2">
             <Icon size="sm" className={iconColor} />
-            <p className="text-zinc-50 max-md:text-sm max-sm:text-base whitespace-nowrap">
-                {text}
-            </p>
+            <p className="text-zinc-500 text-sm">{text}</p>
         </div>
     );
 };
