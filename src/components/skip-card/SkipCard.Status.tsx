@@ -10,7 +10,10 @@ export const SkipCardStatus = ({ status, type }: SkipCardStatusProps) => {
     const { text, iconColor, icon: Icon } = StatusConfig[type][statusKey];
 
     return (
-        <div className="flex items-center gap-2">
+        <div
+            className="flex items-center gap-2"
+            data-testid={`skip-status-${type}`}
+        >
             <Icon size="sm" className={iconColor} />
             <p className="text-zinc-400 dark:text-zinc-500 text-sm">{text}</p>
         </div>

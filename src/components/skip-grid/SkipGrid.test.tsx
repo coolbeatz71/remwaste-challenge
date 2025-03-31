@@ -1,5 +1,5 @@
 import type { ApiErrorDto } from "@/services/Api";
-import SkipGrid from "./SkipGrid";
+import SkipGrid, { NUMBER_OF_SKELETONS } from "./SkipGrid";
 
 import { SkipMapper } from "@/services/Mapper";
 import { mockedSkips } from "@/test/MockedApi";
@@ -41,7 +41,9 @@ describe("SkipGrid", () => {
                 setSelectedSkip={vi.fn()}
             />
         );
-        expect(screen.getAllByTestId("skip-card-loading")).toHaveLength(6);
+        expect(screen.getAllByTestId("skip-card-loading")).toHaveLength(
+            NUMBER_OF_SKELETONS
+        );
     });
 
     test("should render skip cards when skips are available", () => {

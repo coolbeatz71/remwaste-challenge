@@ -3,13 +3,15 @@ import { ErrorDisplay } from "../shared/ErrorDisplay";
 import { SkipCard } from "../skip-card/SkipCard";
 import { SkipCardLoading } from "../skip-card/SkipCard.Loading";
 
-type SkipGridProps = {
+export const NUMBER_OF_SKELETONS = 8;
+
+interface SkipGridProps {
     loading: boolean;
     skips: SkipModel[];
     error?: ApiErrorDto | null;
     selectedSkip: SkipModel | null;
     setSelectedSkip: (skip: SkipModel) => void;
-};
+}
 
 const SkipGridHeader = () => (
     <div className="py-6">
@@ -43,9 +45,9 @@ export default function SkipGrid({
             <SkipGridHeader />
             <div className={gridClasses}>
                 {loading
-                    ? [...Array.from({ length: 6 }).keys()].map((len) => (
-                          <SkipCardLoading key={len} />
-                      ))
+                    ? [
+                          ...Array.from({ length: NUMBER_OF_SKELETONS }).keys()
+                      ].map((len) => <SkipCardLoading key={len} />)
                     : skips.map((skip) => (
                           <SkipCard
                               key={skip.id}
