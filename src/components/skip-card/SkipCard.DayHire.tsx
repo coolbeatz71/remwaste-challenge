@@ -9,8 +9,8 @@ export const SkipCardDayHire = ({ hirePeriodDays }: SkipCardDayHireProps) => {
         <div className="flex flex-row items-center gap-2">
             <IconTimer size="sm" className="text-blue-400 text-xl" />
 
-            <p className="text-zinc-50 max-md:text-sm max-sm:text-base">
-                {hirePeriodDays} day hire period
+            <p className="text-zinc-500 dark:text-zinc-500 text-sm">
+                {hirePeriodDays} days hire period
             </p>
         </div>
     );

@@ -1,3 +1,4 @@
+import { resolve } from "node:path";
 import { fileURLToPath } from "url";
 import react from "@vitejs/plugin-react";
 import { loadEnv } from "vite";
@@ -29,8 +30,6 @@ export default defineConfig({
     },
     // Add this to ensure proper file resolution
     resolve: {
-        alias: {
-            "@": fileURLToPath(new URL(".", import.meta.url))
-        }
+        alias: [{ find: "@", replacement: resolve(__dirname, "./src") }]
     }
 });
