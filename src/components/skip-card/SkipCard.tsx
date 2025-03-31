@@ -1,5 +1,3 @@
-import {} from "@/components/layout/Card.Layout";
-import {} from "@/config/Icons";
 import type { SkipModel } from "@/services/Api";
 import NextImage from "next/image";
 import { GridBackground } from "../shared/background/Grid.Background";
@@ -14,13 +12,17 @@ export interface SkipCardProps {
 }
 
 export const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
+    const cardBgColor = isSelected
+        ? "bg-slate-300 dark:bg-slate-700 border-cyan-400 dark:border-cyan-500 border-2"
+        : "bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700";
+
     return (
         <div
-            className={`relative backdrop-blur-sm bg-slate-100/60 p-3 sm:p-3.5 md:p-4 
-                rounded-lg overflow-hidden flex flex-col
-                border border-slate-200 cursor-pointer`}
+            className={`relative backdrop-blur-sm  ${cardBgColor} p-3 sm:p-3.5 md:p-4
+                rounded-lg overflow-hidden flex flex-col dark:hover:bg-slate-900 hover:bg-slate-200 
+                border  cursor-pointer hover:shadow-lg transition-all duration-300`}
         >
-            <GridBackground size={20} />
+            <GridBackground size={1} />
             <div className="flex flex-col items-center relative">
                 {skip.privateOnly && (
                     <div className="self-end absolute">
