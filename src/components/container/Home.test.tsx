@@ -2,14 +2,24 @@ import { steps } from "@/config/Steps";
 import { useSkips } from "@/hooks/UseSkips";
 import { mockedSkips } from "@/test/MockedApi";
 import { fireEvent, render, screen } from "@testing-library/react";
+import type { ClassAttributes, ImgHTMLAttributes, JSX } from "react";
 import type { Mock } from "vitest";
-import Home from ".";
+import { NUMBER_OF_SKELETONS } from "../skip-grid/SkipGrid";
+import { HomeContainer } from "./Home";
 
 vi.mock("@/hooks/UseSkips", () => ({
     useSkips: vi.fn()
 }));
 
-describe("Home Component", () => {
+vi.mock("next/image", () => ({
+    default: (
+        props: JSX.IntrinsicAttributes &
+            ClassAttributes<HTMLImageElement> &
+            ImgHTMLAttributes<HTMLImageElement>
+    ) => <img {...props} alt={props.alt} data-testid="skip-image" />
+}));
+
+describe("HomeContainer Component", () => {
     test("should render all components", () => {
         (useSkips as Mock).mockReturnValue({
             skips: [],
@@ -17,7 +27,7 @@ describe("Home Component", () => {
             error: null
         });
 
-        render(<Home />);
+        render(<HomeContainer />);
 
         expect(screen.getByText("RemWaste Challenge")).toBeInTheDocument();
 
@@ -33,8 +43,10 @@ describe("Home Component", () => {
             error: null
         });
 
-        render(<Home />);
-        expect(screen.getAllByTestId("skip-card-loading")).toHaveLength(6);
+        render(<HomeContainer />);
+        expect(screen.getAllByTestId("skip-card-loading")).toHaveLength(
+            NUMBER_OF_SKELETONS
+        );
     });
 
     test("should handle skip selection toggle: display/hide bottom drawer", async () => {
@@ -44,7 +56,7 @@ describe("Home Component", () => {
             error: null
         });
 
-        render(<Home />);
+        render(<HomeContainer />);
 
         const firstSkipCard = await screen.findAllByTestId("skip-card");
         // click for the first time

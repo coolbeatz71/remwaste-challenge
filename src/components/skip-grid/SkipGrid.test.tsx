@@ -4,7 +4,6 @@ import SkipGrid, { NUMBER_OF_SKELETONS } from "./SkipGrid";
 import { SkipMapper } from "@/services/Mapper";
 import { mockedSkips } from "@/test/MockedApi";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { vi } from "vitest";
 
 describe("SkipGrid", () => {
     test("should render error message when error exists", () => {
