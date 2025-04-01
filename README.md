@@ -71,7 +71,7 @@ yarn start
 
 ### Current Issues 😬
 
-- **The top stepper is scrolling horizontally**: Users might not realize they need to scroll, making navigation frustrating. Fix: Make it responsive so steps fit properly on all screens.
+- **The top stepper is scrolling horizontally on Mobile**: Users might not realize they need to scroll, making navigation frustrating. Fix: Make it responsive so steps fit properly on all screens.
 
 - **Card image distortion**: Images are stretched due to incorrect aspect ratio handling. Fix: Use object-fit: cover or adjust width-to-height scaling.
 
