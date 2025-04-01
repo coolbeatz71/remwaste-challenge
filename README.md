@@ -91,7 +91,7 @@ yarn start
 - Improved card images so they actually *look* like icons.
 - Added a toggle feature—now you can select *and* unselect skips like a pro.
 - Made the entire card clickable, not just the tiny button.
-- Implemented a dark/light theme switcher (I challenged to implement it using tailwind v4: I already did it in the paste with tailwind v3 on my [portfolio](https://mutombo.dev)).
+- Implemented a dark/light theme switcher (I challenged myself to implement it using tailwind v4: I already did it in the past with tailwind v3 on my [portfolio](https://mutombo.dev)).
 - Provided actual useful information on skip cards (hire period, road allowance, heavy waste allowance, price per week, and VAT percentage).
 - Ensured selected skips stay visible, even if you scroll too far.
 - Used better typography, icons, hover effects, and shadows for an upgraded UI.
