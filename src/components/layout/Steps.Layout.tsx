@@ -11,6 +11,9 @@ export const StepsLayout = ({ steps }: StepsLayoutProps) => {
         <div className={cn("min-h-full text-gray-900 dark:text-gray-100")}>
             <div className="container mx-auto px-4 py-6">
                 <div className="relative">
+                    <div className="md:hidden pb-4">
+                        {steps.find((step) => step.current)?.name}
+                    </div>
                     <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200 dark:bg-gray-700">
                         <div className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-[33%]" />
                     </div>

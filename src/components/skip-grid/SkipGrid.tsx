@@ -32,7 +32,7 @@ export default function SkipGrid({
     setSelectedSkip
 }: SkipGridProps) {
     const gridClasses =
-        "grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+        "grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 
     if (error) {
         return (
