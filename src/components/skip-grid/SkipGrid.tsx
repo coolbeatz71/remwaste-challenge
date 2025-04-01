@@ -14,7 +14,7 @@ interface SkipGridProps {
 }
 
 const SkipGridHeader = () => (
-    <div className="py-6">
+    <div className="lg:py-6">
         <h2 className="text-3xl font-bold text-center mb-2">
             Choose Your Skip Size
         </h2>
@@ -32,7 +32,7 @@ export default function SkipGrid({
     setSelectedSkip
 }: SkipGridProps) {
     const gridClasses =
-        "grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+        "grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 
     if (error) {
         return (
@@ -41,7 +41,7 @@ export default function SkipGrid({
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-40 lg:mb-24">
             <SkipGridHeader />
             <div className={gridClasses}>
                 {loading

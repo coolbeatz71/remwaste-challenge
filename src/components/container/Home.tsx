@@ -17,7 +17,7 @@ export const HomeContainer = () => {
             <NavbarLayout />
             <StepsLayout steps={steps} />
 
-            <div className="container mx-auto px-4 py-6">
+            <div className="container mx-auto px-4 py-6 pb-12">
                 <SkipGrid
                     skips={skips}
                     error={error}

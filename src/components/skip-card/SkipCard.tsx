@@ -37,13 +37,19 @@ export const SkipCard = ({ skip, isSelected, onSelect }: SkipCardProps) => {
                         </span>
                     </div>
                 )}
-                <NextImage
-                    className="py-6"
-                    src={skip.image}
-                    alt="skip-icon"
-                    width={100}
-                    height={100}
-                />
+
+                <div className="h-64 w-64 md:h-36 md:w-36 relative">
+                    <NextImage
+                        className="py-6"
+                        src={skip.image}
+                        alt="skip-icon"
+                        style={{ objectFit: "contain" }}
+                        sizes="(max-width: 640px) 100vw, 640px"
+                        quality={50}
+                        priority
+                        fill
+                    />
+                </div>
             </div>
 
             <p className="text-2xl font-bold font-sans text-blue-500 flex flex-row items-end justify-start gap-1">
